@@ -1,0 +1,55 @@
+.login-dialog-container {
+
+  ::v-deep .login-dialog-custom {
+    margin: 0!important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    .el-dialog__body {
+      padding: 10px;
+
+      .icon-btns-box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 45px;
+
+        .icon-box {
+          cursor: pointer;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+      }
+
+      .tip-message-box {
+        margin-top: 30px;
+        padding-bottom: 10px;
+        text-align: center;
+        box-sizing: border-box;
+
+        a {
+          color: #007fff;
+          //&:link {
+          //  color: #007fff;
+          //}
+          //
+          &:visited {
+            color: #551A8B;
+            text-decoration: none;
+          }
+          //
+          &:hover {
+            color: #ba1000;
+            text-decoration: underline;
+          }
+        }
+
+      }
+    }
+  }
+}

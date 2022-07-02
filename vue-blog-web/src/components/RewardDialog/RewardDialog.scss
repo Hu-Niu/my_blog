@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+.reward-dialog-container {
+  ::v-deep .el-dialog__wrapper {
+
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0!important;
+      width: 500px;
+      border-radius: 10px;
+      
+     
+    }
+  }
+
+}

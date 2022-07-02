@@ -1,0 +1,117 @@
+@import "src/styles/common";
+
+.dashboard-editor-container {
+  position: relative;
+  padding-top: 40px;
+  box-sizing: border-box;
+  // 顶部内容区域 ip数、文章数、评论数、用户数统计
+  .panel-group {
+    margin: 0 28px !important;
+
+    .card-panel {
+      @include clearfix;
+      height: 108px;
+      cursor: pointer;
+      font-size: 12px;
+      overflow: hidden;
+      color: #666;
+      background: #fff;
+      box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      box-sizing: border-box;
+
+      .panel-ico {
+        float: left;
+        font-size: 48px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        margin: 10px 20px;
+        border-radius: 8px;
+
+        &.icon-people {
+          color: #40c9c6;
+        }
+
+        &.icon-comment {
+          color: #36a3f7;
+        }
+
+        &.icon-ip {
+          color: #f4516c;
+        }
+
+        &.icon-article {
+          color: #34bfa3;
+        }
+
+        &:hover {
+          &.panel-ico {
+            color: #ffffff;
+          }
+
+          &.icon-people {
+            background: #40c9c6;
+          }
+
+          &.icon-comment {
+            background: #36a3f7;
+          }
+
+          &.icon-ip {
+            background: #f4516c;
+          }
+
+          &.icon-article {
+            background: #34bfa3;
+          }
+        }
+      }
+
+      .panel-desc {
+        float: left;
+        padding-top: 20px;
+        font-weight: bold;
+        margin-left: 20px;
+
+        .card-panel-text {
+          line-height: 18px;
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+
+        .card-panel-num {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  // 文章贡献度
+  .contribution-container {
+    margin: 0 28px 20px !important;
+
+  }
+
+  //  分类饼图
+  .category-container {
+    margin: 0 28px !important;
+
+    .chart-wrapper {
+      background: #fff;
+      padding: 16px 16px 0;
+      margin-bottom: 32px;
+    }
+  }
+
+  // 访问量统计
+  .visit-container {
+    background: #FFFFFF;
+    margin: 0 45px 30px!important;
+    padding: 16px 16px 0;
+  }
+
+}

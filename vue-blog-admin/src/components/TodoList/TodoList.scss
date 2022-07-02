@@ -1,0 +1,112 @@
+//@import "src/styles/common";
+
+.todo-app {
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    margin-bottom: 10px;
+    flex: 1;
+  }
+
+  section {
+    //@include sidebar-scroll-bars;
+    height: 240px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+
+    li {
+      border-bottom: 1px solid #ededed;
+      padding: 10px 0;
+      cursor: default;
+
+      &:hover .read-box .delete-ico {
+        visibility: visible;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .read-box {
+        display: flex;
+        align-items: center;
+
+        // 选中框
+        .el-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          &.done {
+            background-color: #32DADD;
+            border-color: #32DADD;
+            color: #ffffff;
+          }
+        }
+
+        // 内容
+        span {
+          flex: 1;
+          display: block;
+          font-size: 14px;
+          padding: 0 10px;
+          color: #4d4d4d;
+          font-weight: 700;
+          word-break: break-all; // 超出宽度强制换行 直接截断
+
+          &.done {
+            text-decoration: line-through;
+            color: #d9d9d9;
+          }
+        }
+
+        // 删除
+        .delete-ico {
+          visibility: hidden;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 16px;
+          color: #cc9a9a;
+        }
+      }
+
+      .edit-box {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  footer {
+    flex: 1;
+    font-size: 12px;
+    color: #777777;
+    .total {
+      float: left;
+      margin: 0 30px 0 20px;
+      padding: 3px 7px;
+      cursor: default;
+    }
+
+    ul {
+      float: left;
+      //@include clearfix;
+      li {
+        float: left;
+        padding: 3px 7px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover {
+          border-color: rgba(175, 47, 47, 0.2);
+        }
+        &.active {
+          border-color: rgba(175, 47, 47, 0.3);
+        }
+      }
+    }
+  }
+}

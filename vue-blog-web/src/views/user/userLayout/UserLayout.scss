@@ -1,0 +1,30 @@
+$bg: #fff;
+$contentMinHeight: 800px;
+$asideWidth: 230px;
+
+.user-layout-container {
+  header {
+    height: 30px;
+    background: $bg;
+    margin: 10px 0;
+  }
+  .user-setting-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    aside {
+      width: $asideWidth;
+      background: $bg;
+      min-height: $contentMinHeight;
+    }
+
+    main {
+      width: calc(100% - #{$asideWidth + 20});
+      background: $bg;
+      min-height: $contentMinHeight;
+    }
+  }
+
+}

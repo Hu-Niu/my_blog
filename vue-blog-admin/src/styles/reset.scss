@@ -1,0 +1,301 @@
+@charset "utf-8";
+/*
+  Document   : CSS样式初始化
+  Created on : 2021-04-26
+  Author : cheny
+  Description:
+  CSS样式表的初始化，全局样式设置。部分样式属性请根据具体页面重置其属性
+*/
+
+/* reset */
+body, div, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+/* 初始化标签在所有浏览器中的margin、padding值 */
+fieldset, img {
+  border: 0 none
+}
+
+/* 重置fieldset（表单分组）、图片的边框为0*/
+ul, menu {
+  list-style: none
+}
+
+/* 重置类表前导符号为onne,menu在HTML5中有效 */
+blockquote, q {
+  quotes: none
+}
+
+/* 重置嵌套引用的引号类型 */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+
+/* 重置嵌套引用*/
+input, select, textarea, button {
+  vertical-align: middle
+}
+
+/* 重置表单控件垂直居中*/
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer
+}
+
+/* 重置表单button按钮效果 */
+body {
+  background: #fff
+}
+
+/* 重置body 页面背景为白色 */
+//body,th,td,input,select,textarea,button {font-size:12px;line-height:1 ;font-family:"微软雅黑", "黑体","宋体";color:#666} /* 重置页面文字属性 */
+a {
+  color: #666;
+  text-decoration: none
+}
+
+/* 重置链接a标签 */
+a:active, a:hover {
+  text-decoration: none
+}
+
+/* 重置链接a标签的鼠标滑动效果 */
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal
+}
+
+/* 重置样式标签的样式 */
+caption {
+  display: none;
+}
+
+/* 重置表格标题为隐藏 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* 重置table属性 */
+img {
+  vertical-align: top
+}
+
+/* 图片在当前行内的垂直位置 */
+
+/* 取消a标签点击后的虚线框 */
+a {
+  outline: none;
+}
+
+// 取消面包屑nav标签的横向滚动条
+.tags-view-container {
+  .inner-box::-webkit-scrollbar {
+    display: none!important; /* Chrome Safari */
+  }
+}
+
+
+
+// 自定义滚动条样式 https://www.jq22.com/webqd3500/
+::-webkit-scrollbar-track { /*滚动条里面轨道*/
+  //-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar { /*滚动条整体样式*/
+  width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 8px;
+  background-color: transparent;
+}
+
+//滚动条的样式
+::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+  border-radius: 2px;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  //background-color: rgba(48, 65, 86, .5);
+  background-color: rgba(144, 147, 153, .5);
+}
+
+// vditor预览图片弹出层
+.vditor.vditor-img {
+  //display: none;
+  z-index: 999999;
+}
+
+// element-ui 自定义样式重置
+.choose-img-dialog {
+  box-sizing: border-box;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  .el-dialog__header {
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .el-dialog__body {
+    padding-top: 0;
+    padding-bottom: 1px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+
+    .filter-container {
+      margin-bottom: 10px;
+    }
+
+    .choose-img-pannel-container {
+      height: calc(100% - 50px);
+    }
+
+    .el-pagination {
+      //padding-bottom: 10px;
+    }
+  }
+
+}
+
+.blog-editor-markdown-dialog {
+  box-sizing: border-box;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  .el-dialog__header {
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+
+    .blog-title-box {
+      display: flex;
+
+      .label {
+        //width: 120px;
+      }
+
+      .feature-btn {
+        margin-right: 20px;
+        //width: 300px;
+      }
+
+      .input-box {
+        flex: 1;
+        padding: 0 20px;
+      }
+
+      .close-icon {
+        width: 30px;
+        text-align: center;
+      }
+    }
+  }
+
+  .el-dialog__body {
+    padding-top: 0;
+    padding-bottom: 1px;
+    height: calc(100% - 60px);
+
+    .editor-container {
+      height: 100%;
+    }
+  }
+}
+
+@mixin chooseImg {
+  .choose-img {
+    width: 180px;
+    height: 120px;
+    border: 1px dashed #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+
+    &:hover {
+      border-color: #409EFF;
+      color: #409EFF;
+      cursor: default;
+    }
+
+    .el-upload {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+  }
+
+  .img-box {
+    width: 180px;
+    height: 120px;
+    position: relative;
+
+    .delete-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      background: #F56C6C;
+      color: #FFFFFF;
+      text-align: center;
+      z-index: 2;
+    }
+  }
+}
+
+.add-dialog {
+  @include chooseImg;
+}
+
+.choose-blog-extra-dialog {
+  width: 800px;
+  max-height: 700px;
+  overflow-y: auto;
+
+  .el-dialog__header {
+    padding: 0 20px;
+    height: 50px;
+    line-height: 50px;
+
+    .blog-title-box {
+      display: flex;
+
+      .label {
+        flex: 1;
+      }
+
+      .close-icon {
+        width: 30px;
+        text-align: center;
+      }
+    }
+  }
+
+  .el-dialog__body {
+    padding-top: 0;
+    padding-bottom: 1px;
+
+    .el-form-item {
+      margin-bottom: 0;
+      margin-top: 5px;
+    }
+
+    @include chooseImg;
+  }
+}
+

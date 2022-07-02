@@ -1,0 +1,38 @@
+@import "/src/styles/variables.scss";
+$headerHeight: 60px;
+$footerHeight: 60px;
+$mainHeight: 810px; // 加一个minHeight 防止中间内容高度不够时，底部的footer顶上来，不美观
+
+.layout-container {
+  background-image: url('../../assets/bg/psc.jpeg');
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  min-width: $w;
+  min-height: 100%;
+  .logo{
+  color: #fff;
+  // margin-left: 40px;
+  }
+  header {
+    height: $headerHeight;
+    // background: #5B83E0;
+    overflow: hidden;
+  }
+
+  main {
+    min-height: $mainHeight;
+    @include w;
+  }
+
+  footer {
+    background: #181818;
+    color: #ffffff;
+    margin-top: 20px;
+    height: $footerHeight;
+    box-sizing: border-box;
+  }
+}

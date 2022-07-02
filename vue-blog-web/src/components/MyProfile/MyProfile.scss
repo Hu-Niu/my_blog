@@ -1,0 +1,44 @@
+@import "/src/styles/variables";
+
+.my-profile-container {
+  margin-bottom: $marginBottomTags;  
+  // background-image: url("/static/images/banner.png") !important;
+  // background-repeat: no-repeat !important;
+  background-color: rgba(255,255,255,0.6);
+  height: 400px;
+  box-sizing: border-box;
+  padding: 30px 30px;
+  @include boxShadow;
+
+  h2 {
+    @include hotTagsH2;
+  }
+
+  .avatar {
+    margin: 40px auto 20px;
+    width: 100px;
+    .el-image {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    color: $textColor3;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .name {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .position {
+    font-size: 14px;
+  }
+  .info {
+    padding: 10px 20px 0;
+    color: $textColor9;
+    text-align: justify;
+  }
+}

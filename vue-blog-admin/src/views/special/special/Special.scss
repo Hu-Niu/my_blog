@@ -1,0 +1,26 @@
+.special-container {
+  background-color: #fff;
+  padding: 5px 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .filter-container {
+    margin-bottom: 10px;
+  }
+  .feature-btns {
+    margin-bottom: 10px;
+
+    .el-button {
+      padding: 5px 10px !important;
+    }
+  }
+  .pagination-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .table-container {
+    width: 100%;
+  }
+}

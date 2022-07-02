@@ -1,0 +1,90 @@
+@import "../../../../styles/variables.scss";
+
+.header-nav-container {
+  @include w;
+  @include clearfix;
+  position: fixed;
+  top:0;
+  width: 90%;
+  z-index: 99;
+  padding: 0 80px;
+  transition: 1s;
+  .container-menu{
+    font-size: 5px;
+    border:0
+  }
+  .search,
+  .user-unlogin {
+    height: 60px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 20px;
+  }
+  .user-login {
+    width: 45px;
+    height: 60px;
+    float: right;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+
+    .el-image {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+
+    }
+  }
+
+  .logo-box {
+    height: 60px;
+    float: left;
+    color: #00a7eb;
+    line-height: 60px;
+    margin-right: 50px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  ::v-deep .el-menu {
+    float: left;
+    height: 60px;
+
+    .el-menu-item,
+    .el-submenu__title {
+      font-size: 16px !important;
+    }
+  }
+
+}
+
+.bian{
+  background-color: rgba(0, 167, 235,0.7) !important;
+  // opacity:0.6; 
+}
+
+.submenu-item{
+  background-color: #fff;
+  border-radius: 6px;
+  color:#000 !important;
+}
+.el-menu-item:hover {
+  background: rgba(255,255,255,0) !important;
+}
+// .el-submenu__title:hover {
+//   background: rgba(255,255,255,0) !important;
+// }
+
+
+
+
+
+

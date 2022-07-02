@@ -1,0 +1,28 @@
+$topHeight : 90px;
+.app-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .main-container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .nav-box {
+      width: 100%;
+      height: 50px;
+    }
+    .tag-box {
+      width: 100%;
+      height: 40px !important;
+      background: #ffffff;
+    }
+    .app-main-box {
+      width: 100%;
+      height: calc(100% - #{$topHeight});
+    }
+  }
+}

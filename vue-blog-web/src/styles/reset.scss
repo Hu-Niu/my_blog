@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+/* reset */
+body, div, blockquote, ul, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, input, select, textarea, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* 初始化标签在所有浏览器中的margin、padding值 */
+fieldset, img {
+  border: 0 none
+}
+
+/* 重置fieldset（表单分组）、图片的边框为0*/
+ul li {
+  list-style: none
+}
+
+/* 重置嵌套引用*/
+input, select, textarea, button {
+  vertical-align: middle
+}
+
+/* 重置表单控件垂直居中*/
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer
+}
+
+/* 重置表单button按钮效果 */
+body {
+  background: #fff
+}
+
+/* 重置body 页面背景为白色 */
+//body,th,td,input,select,textarea,button {font-size:12px;line-height:1 ;font-family:"微软雅黑", "黑体","宋体";color:#666} /* 重置页面文字属性 */
+a {
+  color: #666;
+  text-decoration: none
+}
+
+/* 重置链接a标签 */
+a:active, a:hover {
+  text-decoration: none
+}
+
+/* 重置链接a标签的鼠标滑动效果 */
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal
+}
+
+/* 重置样式标签的样式 */
+caption {
+  display: none;
+}
+
+/* 取消a标签点击后的虚线框 */
+a {
+  outline: none;
+}
+
+// 自定义滚动条样式 https://www.jq22.com/webqd3500/
+::-webkit-scrollbar-track { /*滚动条里面轨道*/
+  //-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar { /*滚动条整体样式*/
+  width: 7px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 8px;
+  background-color: transparent;
+}
+
+//滚动条的样式
+::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+  border-radius: 2px;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  //background-color: rgba(48, 65, 86, .5);
+  background-color: rgba(144, 147, 153, .5);
+}
+
+html, body {
+  background-color: #F6F6F6;
+}
+
+// 全局中v-html渲染的内容自定义样式
+.html-box {
+  width: 100%;
+  overflow: hidden;
+
+  table {
+    border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+  }
+  table tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  table td, .table th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+
+  table th {
+    background-color: #dce9f9;
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    padding: 5px;
+  }
+
+  table td:first-child, table th:first-child {
+    border-left: none;
+  }
+
+  table th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+  }
+  table th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+  }
+  table th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+  }
+  table tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+  }
+  table tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    code {
+      color: #37474f;
+      padding: 1px 5px;
+      background: #f9f2f4;
+    }
+  }
+
+  a {
+    color: #1a73e8;
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  p {
+    margin: 5px 0;
+    text-indent: 2em;
+  }
+
+  li p {
+    text-indent: 0;
+  }
+
+  img {
+    max-width: 100% !important;
+    margin-left: -2em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+  }
+
+  ul {
+    margin: 16px 0;
+    padding-left: 40px;
+    li {
+      list-style-type: disc;
+    }
+  }
+  ol {
+    margin: 16px 0;
+    padding-left: 40px;
+    li {
+      list-style-type: decimal;
+    }
+  }
+
+  blockquote {
+    color: #01579b;
+    border-left: 2px solid #01579b;
+    background-color: #e1f5fe;
+    padding: 10px 1em;
+    margin: 10px 0;
+    font-size: 14px;
+    p {
+      text-indent: 2em;
+    }
+  }
+
+}
+
+
+// 需要只能吸附顶部的div添加的类名
+.stand-here {
+  position: fixed;
+  width: 390px !important;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  margin-left: 410px;
+  z-index: 10;
+}
+

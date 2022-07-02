@@ -1,0 +1,108 @@
+$contentPaddingLeft: 50px; // 内容区的左边距
+
+$timeLineBorderColor: #E3E9ED; // 时间轴的背景色
+
+$commitIconColor: #f4516c; // 发布文章图标颜色
+$editIconColor: #34bfa3; // 修改文章图标颜色
+$removeIconColor: #000; // 删除文章图标颜色
+
+$titleColor: #005980; // 文章标题的颜色
+$titleColorHover: #1283ba; // 文章标题鼠标悬浮时的颜色
+
+$tagColor: #8c92a4; // 文章类别的颜色
+
+.contribution-desc-container {
+  padding-bottom: 50px;
+  header {
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 0 90px;
+
+    // 没有动态时
+    .no-activity {
+      text-align: center;
+      font-size: 60px;
+    }
+    // 有动态时
+    .has-activity {
+      .time {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .content {
+        padding-left: $contentPaddingLeft;
+        padding-top: 5px;
+        position: relative;
+        li {
+          position: relative;
+          padding-left: 10px;
+          // 时间轴上的小图标
+          .time-line-icon {
+            position: absolute;
+            left: -$contentPaddingLeft / 2;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 1;
+            &.commit {
+              color: $commitIconColor;
+            }
+            &.edit {
+              color: $editIconColor;
+            }
+            &.remove {
+              color: $removeIconColor;
+            }
+          }
+
+          .summary {
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          .detail {
+            margin-bottom: 15px;
+            .article-list {
+              margin-bottom: 5px;
+              font-size: 14px;
+              display: flex;
+              .title {
+                margin-right: 15px;
+                color: $titleColor;
+                cursor: pointer;
+                &:hover {
+                  color: $titleColorHover;
+                }
+              }
+              .tags {
+                display: flex;
+                color: $tagColor;
+                .tag {
+                  cursor: pointer;
+                  font-size: 14px;
+                  &:hover {
+                    color: $titleColorHover;
+                  }
+                }
+                .split-line {
+                  padding: 0 3px;
+                  cursor: default;
+                }
+              }
+            }
+          }
+        }
+
+        // 时间线
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: $contentPaddingLeft / 2;
+          width: 1px;
+          height: 100%;
+          background: $timeLineBorderColor;
+        }
+      }
+    }
+  }
+}

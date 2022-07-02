@@ -1,0 +1,27 @@
+//@import "src/styles/common";
+
+.scrollbar-wrapper {
+  //@include sidebar-scroll-bars;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: rgb(48, 65, 86);
+
+  .el-menu {
+    border-right: none;
+    width: 180px;
+
+    &.el-menu--collapse {
+      width: 63px;
+    }
+
+    .el-menu-item {
+      min-width: 180px;
+      background-color: #1f2d3d !important;
+
+      &:hover {
+        background-color: #001528 !important;
+      }
+    }
+  }
+}

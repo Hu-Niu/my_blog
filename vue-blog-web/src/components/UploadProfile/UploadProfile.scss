@@ -1,0 +1,67 @@
+@import "/src/styles/variables";
+
+$containerWidth: 120px;
+$imgBoxWidth: 100px;
+$imgBoxHeight: 100px;
+$profileTipFontSize: 14px;
+$profileTitleMarginBottom: 10px;
+
+.upload-profile-container {
+  width: $containerWidth;
+  .upload-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .img-box {
+      width: $imgBoxWidth;
+      height: $imgBoxHeight;
+      border-radius: 50%;
+      overflow: hidden;
+
+      position: relative;
+
+      .mask {
+        color: #ffffff;
+        opacity: 0!important;
+        font-size: $profileTipFontSize;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include mask;
+
+        &:hover {
+          opacity: 0.5!important;
+        }
+
+        .icon-box {
+          margin-bottom: $profileTitleMarginBottom / 2 ;
+          font-size: 16px;
+        }
+      }
+
+    }
+
+    .el-upload__tip {
+      text-align: center;
+      .profile-title {
+        margin-bottom: $profileTitleMarginBottom;
+        font-size: $profileTipFontSize;
+        color: #000000;
+      }
+      .cancel-upload {
+        color: $textColor8;
+        margin-bottom: $profileTitleMarginBottom;
+        font-size: $profileTipFontSize;
+        cursor: pointer;
+      }
+      .profile-tip {
+        text-align: left;
+      }
+    }
+  }
+
+}

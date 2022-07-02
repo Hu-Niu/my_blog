@@ -1,0 +1,31 @@
+/*
+	模式 $Scss文件class类名占位符替换$
+	替换方式：模块名变为连字符类型
+		blogSort -> blog-sort
+*/
+.admin-role-container {
+  background-color: #fff;
+  padding: 5px 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .filter-container {
+    margin-bottom: 10px;
+  }
+  .feature-btns {
+    margin-bottom: 10px;
+
+    .el-button {
+      padding: 5px 10px !important;
+    }
+  }
+  .pagination-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .table-container {
+    width: 100%;
+  }
+}

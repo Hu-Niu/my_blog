@@ -1,0 +1,232 @@
+$hoverBorderColor: #000000; // 鼠标划过小方块时的border颜色
+
+$color-less: #EEEEEE; // 0个动态时的背景色
+$color-little: #D6E685; // 1个动态时的背景色
+$color-some: #8CC665; // 2个动态时的背景色
+$color-many: #44A340; // 3个动态时的背景色
+$color-much: #1E6823; // 4个动态时的背景色
+
+$tips-color: #4D4D4D; // 贡献度文字解释说明的颜色
+$tips-background-color: #FFFFFF; // 贡献度文字解释说明的背景颜色
+$tips-box-shadow-color: rgba(0, 0, 0, .2); // 贡献度文字解释说明的盒子阴影颜色
+
+$leftSideWidth: 37px; // 左侧周几的宽度
+
+/*
+  一列7个格 一年365天 按371天算 共有371/7=53列
+  所以每个小格的宽度应该是 100% / 53
+  但是有一些特殊情况 会是 54列，2021-06-14是星期一 2020-06-14是星期日
+  这时候排列起来就是 54列，不过flex布局不影响，会自动等分，还是设置为53列
+*/
+$column: 53;
+$gridHeight: 18px;
+
+.contribution-container {
+  header {
+    margin-bottom: $gridHeight;
+    height: 40px;
+    line-height: 40px;
+
+    h3 {
+      float: left;
+    }
+
+    .el-dropdown {
+      float: right;
+
+      .el-dropdown-link {
+        cursor: pointer;
+      }
+    }
+  }
+
+  section {
+    padding: 0 90px;
+
+    .contribution-box {
+      display: flex;
+
+      .left-side {
+        width: $leftSideWidth;
+        font-size: 12px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .box {
+          height: $gridHeight;
+          line-height: $gridHeight;
+        }
+      }
+
+      .right-side {
+        width: calc(100% - #{$leftSideWidth});
+        height: $gridHeight * 7;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+
+        .month {
+          position: absolute;
+          width: $gridHeight * 3 + 3px;
+          height: $gridHeight;
+          line-height: $gridHeight;
+          top: 0;
+          text-align: center;
+          font-size: 12px;
+          transform: translate(-50%,-100%);
+        }
+
+        .box {
+          width: 100% / $column;
+          height: $gridHeight;
+          border: 1px solid #FFF;
+          box-sizing: border-box;
+          position: relative;
+
+          &.placeholder-box {
+            border-color: transparent;
+          }
+
+          .tip {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            text-align: center;
+            background: $tips-background-color;
+            padding: 8px;
+            color: $tips-color;
+            width: 140px;
+            font-size: 12px;
+            border-radius: 3px;
+            box-shadow: 0 0 3px 2px $tips-box-shadow-color;
+            z-index: 2;
+
+            &::before {
+              content: '';
+              display: block;
+              width: 10px;
+              height: 10px;
+              background: $tips-background-color;
+              box-shadow: 1px 1px 1px $tips-box-shadow-color;
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              margin-left: -5px;
+              margin-bottom: -5px;
+              transform: rotate(45deg);
+            }
+          }
+
+          // 0篇
+          &.less {
+            background-color: $color-less;
+
+            &:hover {
+              border: 1px solid $hoverBorderColor;
+            }
+          }
+
+          // 1篇
+          &.little {
+            background-color: $color-little;
+
+            &:hover {
+              border: 1px solid $hoverBorderColor;
+            }
+          }
+
+          // 2篇
+          &.some {
+            background-color: $color-some;
+
+            &:hover {
+              border: 1px solid $hoverBorderColor;
+            }
+          }
+
+          // 3篇
+          &.many {
+            background-color: $color-many;
+
+            &:hover {
+              border: 1px solid $hoverBorderColor;
+            }
+          }
+
+          // 4篇 or 大于4篇
+          &.much {
+            background-color: $color-much;
+
+            &:hover {
+              border: 1px solid $hoverBorderColor;
+            }
+          }
+        }
+      }
+    }
+    // 颜色说明
+    .contribution-tip {
+      margin-top: 10px;
+      font-size: 12px;
+      height: 16px;
+      line-height: 16px;
+      text-align: right;
+
+      .word {
+        display: inline-block;
+      }
+
+      ul {
+        display: inline-block;
+        cursor: default;
+
+        li {
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+
+          &.less {
+            background: $color-less;
+          }
+
+          &.little {
+            background: $color-little;
+          }
+
+          &.some {
+            background: $color-some;
+          }
+
+          &.many {
+            background: $color-many;
+          }
+
+          &.much {
+            background: $color-much;
+          }
+        }
+      }
+    }
+    //文字说明
+    .contribution-describe {
+      font-size: 14px;
+
+      p {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      p.text-muted {
+        color: $tips-color;
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,113 @@
+.subject-info-container {
+  background-color: rgba(255,255,255,0.6);
+  padding-bottom: 50px;
+  position: relative;
+  .frontpage-banner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    box-sizing: border-box;
+
+    h1,
+    p {
+      text-align: center;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+
+  .frontpage-content__inner {
+    max-width: 920px;
+    margin: 0 auto;
+
+    .frontpage-content__part {
+      display: inline-block;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      background-color: #9b6b6b;
+      border-radius: 12px;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 3px 8px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .frontpage-content__title {
+      margin-bottom: 16px;
+      font-size: 20px;
+      line-height: 28px;
+      color: #404040;
+    }
+
+    .frontpage-content__description {
+      max-width: 700px;
+      margin-bottom: 32px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .list__item {
+      counter-increment: a;
+
+      .list__title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        border-bottom: 1px solid #ebebeb;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+      }
+
+      .list-sub {
+        counter-reset: b;
+        margin-bottom: 24px;
+        list-style-type: none;
+        -webkit-column-gap: 10px;
+        column-gap: 10px;
+        -webkit-columns: 3;
+        columns: 3;
+
+        .list-sub__item {
+          counter-increment: b;
+          break-inside: avoid;
+
+          .list-sub__title {
+            padding-left: 38px;
+            margin-bottom: 2px;
+            position: relative;
+
+            &::before {
+              position: absolute;
+              top: 4px;
+              left: 0;
+              font-size: 12px;
+              line-height: 16px;
+              content: counter(a) "." counter(b);
+            }
+
+            .list-sub__link {
+              font-size: 16px;
+              line-height: 23px;
+
+              &:link {
+                color: #0059b2;
+              }
+
+              &:visited {
+                color: #551A8B;
+                text-decoration: none;
+              }
+
+              &:hover {
+                color: #ba1000;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

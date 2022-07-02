@@ -1,0 +1,5 @@
+./node_modules/
+./.idea
+logs/
+public/upload/
+src/constant/config.js.back

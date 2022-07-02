@@ -1,0 +1,84 @@
+//@import "src/styles/common";
+.dynamic-box {
+  height: 328px;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  overflow-y: auto;
+  position: relative;
+  //@include sidebar-scroll-bars;
+  .no-activity {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+  }
+  .contribution-in-date {
+    padding-left: 50px;
+    position: relative;
+
+    .content {
+      padding: 18px 0;
+      margin-top: 16px;
+      .contributions {
+        margin-top: 10px;
+        &:first-child {
+          margin-top: 0;
+        }
+        .summary {
+          padding: 8px 0;
+          line-height: 20px;
+          font-size: 16px;
+        }
+        .list {
+          font-size: 14px;
+          li {
+            margin-top: 5px;
+            &:first-child {
+              margin-top: 0;
+            }
+            a {
+              cursor: pointer;
+              color: #005980;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+    }
+    &::after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 1px;
+      height: 100%;
+      background: #E3E9ED;
+    }
+    .timeline-on {
+      position: absolute;
+      z-index: 1;
+      &.date {
+        left: 8px;
+        font-weight: bold;
+        font-size: 12px;
+        background: #FFF;
+        padding: 2px 0;
+      }
+      &.icon {
+        left: 12px;
+        font-size: 18px;
+        margin: 8px 0;
+        line-height: 20px;
+        background: #FFF;
+        .commit {
+          color: #f4516c;
+        }
+        .edit {
+          color: #34bfa3;
+        }
+      }
+    }
+  }
+}

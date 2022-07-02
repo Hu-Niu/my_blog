@@ -1,0 +1,37 @@
+@import "src/styles/variables";
+
+.public-account-dialog-container {
+  ::v-deep .el-dialog__wrapper {
+
+    .el-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 !important;
+      width: 500px;
+      border-radius: 10px;
+
+      .el-dialog__header {
+        padding: 0;
+      }
+
+      .img-box {
+        width: 43 * 4px;
+        height: 43 * 4px;
+        padding: 10px;
+        border: 6px solid #ea5f00;
+        margin: 0 auto;
+        border-radius: 3px;
+      }
+
+      .tip {
+        text-align: center;
+        color: $textColor3;
+        margin: 10px 0;
+      }
+
+    }
+  }
+
+}

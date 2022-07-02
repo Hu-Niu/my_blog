@@ -1,0 +1,209 @@
+@import "src/styles/common";
+
+.contribution-panel {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px 20px;
+
+  header {
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+
+    h3 {
+      float: left;
+    }
+
+    .el-dropdown {
+      float: right;
+
+      .el-dropdown-link {
+        cursor: pointer;
+      }
+    }
+  }
+
+  section {
+    // 贡献度
+    .contribution-box {
+      padding: 20px 0;
+      height: 180px;
+      display: flex;
+
+      .left-side {
+        width: 32px;
+        font-size: 12px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .right-side {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .box {
+          width: 1.88679%;
+          height: 20px;
+          border: 1px solid #FFF;
+          font-size: 6px;
+          position: relative;
+
+          .tip {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            background: #FFFFFF;
+            padding: 8px;
+            color: rgba(0, 0, 0, 0.8);
+            border-radius: 3px;
+            z-index: 99;
+            box-shadow: 0 0 6px -1px rgba(0, 0, 0, .4);
+            font-size: 12px;
+            // 下边的小三角
+            &::before {
+              content: '';
+              font-size: 0;
+              display: block;
+              width: 8px;
+              height: 8px;
+              transform: rotate(45deg) translateX(-50%);
+              background: #ffffff;
+              position: absolute;
+              left: 50%;
+              bottom: -5px;
+              box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .1);
+              z-index: 2;
+            }
+          }
+          .tip-fade-enter-active,
+          .tip-fade-leave-active {
+            transition: all ease-in-out .1s;
+          }
+
+          // 0篇
+          &.less {
+            background-color: #EEEEEE;
+
+            &:hover {
+              border: 1px solid #000;
+            }
+          }
+
+          // 1篇
+          &.little {
+            background-color: #D6E685;
+
+            &:hover {
+              border: 1px solid #000;
+            }
+          }
+
+          // 2篇
+          &.some {
+            background-color: #8CC665;
+
+            &:hover {
+              border: 1px solid #000;
+            }
+          }
+
+          // 3篇
+          &.many {
+            background-color: #44A340;
+
+            &:hover {
+              border: 1px solid #000;
+            }
+          }
+
+          // 4篇 or 大于4篇
+          &.much {
+            background-color: #1E6823;
+
+            &:hover {
+              border: 1px solid #000;
+            }
+          }
+
+        }
+
+        .month {
+          position: absolute;
+          top: 0;
+          margin-top: -15px;
+          margin-left: -20px;
+          min-width: 60px;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+
+    // 颜色说明
+    .contribution-tip {
+      margin-top: 10px;
+      font-size: 12px;
+      height: 16px;
+      line-height: 16px;
+      text-align: right;
+
+      .word {
+        display: inline-block;
+      }
+
+      ul {
+        display: inline-block;
+        cursor: default;
+
+        li {
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+
+          &.less {
+            background: #EEEEEE;
+          }
+
+          &.little {
+            background: #D6E685;
+          }
+
+          &.some {
+            background: #8CC665;
+          }
+
+          &.many {
+            background: #44A340;
+          }
+
+          &.much {
+            background: #1E6823;
+          }
+        }
+      }
+    }
+
+    //文字说明
+    .contribution-describe {
+      font-size: 12px;
+
+      p {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      p.text-muted {
+        color: #8c92a4;
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+}

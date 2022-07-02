@@ -1,0 +1,100 @@
+.picture-panel-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+
+  ::v-deep .el-aside {
+    width: 150px !important;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    font-size: 16px;
+    padding-right: 10px;
+    background-color: #F5F7FA;
+    margin-right: 10px;
+
+    .title {
+      padding: 5px 0;
+      cursor: default;
+    }
+
+    .item {
+      padding: 5px 5px 5px 10px;
+      cursor: pointer;
+      text-align: left;
+
+      &:hover {
+        color: #409EFF;
+      }
+
+      &.active span {
+        display: block;
+        border-right: 2px solid #409EFF;
+        color: #409EFF;
+        font-weight: 700;
+      }
+    }
+  }
+
+  ::v-deep .el-main {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    .picture-box {
+      width: 100%;
+      padding: 10px;
+      background: #EFF1F4;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+
+      .card-box {
+        padding-top: 20px;
+        text-align: center;
+        position: relative;
+
+        .check-box {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 100;
+          width: 15px;
+          height: 15px;
+          .el-checkbox__label {
+            display: none;
+          }
+        }
+
+        .picture-title {
+          color: #8492a6;
+          font-size: 14px;
+          padding: 14px;
+          display: inline-block;
+          white-space: nowrap;
+          width: 60%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .el-image {
+          width: 100%;
+          height: 160px;
+        }
+      }
+
+      .time {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+    }
+
+    .pagination-box {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}

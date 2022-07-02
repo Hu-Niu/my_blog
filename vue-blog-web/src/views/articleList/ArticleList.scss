@@ -1,0 +1,16 @@
+@import "/src/styles/variables";
+
+.article-list-container {
+  margin-top: 15px;
+  @include clearfix;
+
+  main {
+    float: left;
+    width: 66%;
+  }
+
+  aside {
+    float: right;
+    width: 32%;
+  }
+}

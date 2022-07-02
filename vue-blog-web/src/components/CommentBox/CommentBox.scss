@@ -1,0 +1,95 @@
+@import "/src/styles/variables";
+
+.comment-box-container {
+  .top-box {
+    display: flex;
+
+    .profile {
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 30px;
+      font-size: 50px;
+
+      .el-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+
+    .input-box {
+      margin-left: 10px;
+      flex: 1;
+      .el-textarea {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    .remanent {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    .face-smile {
+      width: 30px;
+      font-size: 30px;
+      line-height: 20px;
+      text-align: center;
+      color: $tagColor4;
+      position: relative;
+      margin-right: 10px;
+      cursor: pointer;
+
+      &.no-smile {
+        cursor: not-allowed;
+      }
+
+      ul {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 104%);
+        display: flex;
+        flex-wrap: wrap;
+        width: 400px;
+        background: #FFFFFF;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 2;
+        @include boxShadow;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: #FFFFFF;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translate(-50%,-50%) rotate(-135deg);
+          box-shadow: 1px 1px 0 0 rgba(146, 146, 146, .1);
+          z-index: 1;
+        }
+        li {
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          margin-bottom: 5px;
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+}

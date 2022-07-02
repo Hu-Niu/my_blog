@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$activeColor: #74ca46;
+
+.article-feature-btn-container {
+  position: fixed;
+  left: 50%;
+  top: 190px;
+  transform: translateX(-50%);
+  margin-left: -($w/2 + 50px);
+
+  ::v-deep .feature-box {
+    @include flexCenter;
+    flex-direction: column;
+    .btn-box {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #fff;
+      cursor: pointer;
+      margin-bottom: 15px;
+      color: $textColor4;
+      @include flexCenter;
+      @include boxShadow;
+      .el-badge__content{
+        background-color: $textColor4;
+        color: #ffffff;
+        font-size: 8px;
+        height: 12px;
+        line-height: 12px;
+      }
+      &:hover {
+        color: $textColor3;
+      }
+
+      &.active {
+        color: $activeColor;
+        .el-badge__content{
+          background-color: $activeColor;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

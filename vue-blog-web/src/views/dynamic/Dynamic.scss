@@ -1,0 +1,19 @@
+@import "/src/styles/variables";
+.dynamic-container {
+  margin-top: $marginTopMain;
+  position: relative;
+
+  .motto {
+    @include motto;
+  }
+
+  ::v-deep #tab-home {
+    @include tabHome;
+  }
+
+  ::v-deep .el-tab-pane {
+    .contribution {
+      margin-bottom: 20px;
+    }
+  }
+}

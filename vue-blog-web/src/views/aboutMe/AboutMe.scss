@@ -1,0 +1,41 @@
+@import "/src/styles/variables";
+
+.about-me-container {
+  margin-top: $marginTopMain;
+  position: relative;
+
+  .motto {
+    @include motto;
+  }
+
+  ::v-deep #tab-home {
+    @include tabHome;
+  }
+
+  ::v-deep .el-tab-pane {
+    @include clearfix;
+
+    main {
+      background-color: rgba(255, 255, 255,0.5);
+      float: left;
+      width: 66%;
+      padding: 30px 20px 300px;
+      box-sizing: border-box;
+      // background: #FFFFFF;
+      @include boxShadow;
+
+      article {
+        text-align: justify;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+    }
+
+    aside {
+      float: right;
+      width: 32%;
+    }
+  }
+
+
+}

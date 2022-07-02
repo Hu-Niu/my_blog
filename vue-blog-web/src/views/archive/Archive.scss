@@ -1,0 +1,22 @@
+@import "/src/styles/variables";
+
+.archive-container {
+  margin-top: $marginTopMain;
+  position: relative;
+
+  .motto {
+    @include motto;
+  }
+
+  ::v-deep #tab-home {
+    @include tabHome;
+  }
+
+  ::v-deep .el-tabs__item.is-active {
+    border-bottom: none!important;
+  }
+
+  ::v-deep .el-tab-pane {
+    height: 680px;
+  }
+}

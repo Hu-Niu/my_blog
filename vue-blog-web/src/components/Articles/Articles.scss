@@ -1,0 +1,68 @@
+@import "/src/styles/variables";
+
+.articles-container {
+  article {
+    padding: 20px;
+    background: #ffffff;
+    margin-bottom: 20px;
+
+    h3 {
+      margin-bottom: 10px;
+      color: $textColor3;
+
+      &:hover {
+        color: $textHoverColor;
+        cursor: pointer;
+      }
+    }
+
+    .info-box {
+      display: flex;
+      justify-content: space-between;
+
+      .left-img {
+        width: 30%;
+        height: 130px;
+        @include scaleImg;
+      }
+
+      .right-info {
+        width: 68%;
+
+        p {
+          padding-top: 20px;
+          margin-bottom: 30px;
+          color: $textColor2;
+          font-size: 14px;
+          @include textNumberLine(3);
+        }
+
+        ul {
+          display: flex;
+
+          li {
+            margin-right: 20px;
+            color: $textColor;
+            font-size: 14px;
+          }
+
+          .author span,
+          .type span {
+            cursor: pointer;
+
+            &:hover {
+              color: $textHoverColor3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .load-more-container {
+    @include hasMoreTxt;
+  }
+  .no-more-container {
+    @include noMoreTxt;
+  }
+}

@@ -1,0 +1,246 @@
+@import "/src/styles/variables";
+
+$reportDialogWidth: 760px;
+$reportDialogHeight: 400px;
+$reportDialogHeaderHeight: 40px;
+$reportDialogFooterHeight: 60px;
+$dialogPadding: 20px;
+
+.comment-message{
+  padding: 20px;
+}
+::v-deep .report-box {
+  .el-dialog__wrapper {
+    .report-comment-dialog {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: $reportDialogWidth !important;
+      height: $reportDialogHeight !important;
+      margin-top: -$reportDialogHeight / 2 !important;
+      margin-left: -$reportDialogWidth / 2 !important;
+      margin-bottom: 0 !important;
+      padding-bottom: $dialogPadding;
+      display: flex;
+      flex-direction: column;
+
+      .el-dialog__body {
+        flex: 1;
+        padding: $dialogPadding $dialogPadding 0;
+        h3 {
+          margin-bottom: $dialogPadding;
+        }
+      }
+
+      .el-dialog__header {
+        padding: 0 $dialogPadding;
+        height: $reportDialogHeaderHeight;
+        line-height: $reportDialogHeaderHeight;
+        position: relative;
+        border-bottom: 1px solid $textHoverColor4;
+        .el-dialog__headerbtn {
+          position: absolute;
+          top: 50%;
+          right: $dialogPadding;
+          transform: translateY(-50%);
+        }
+      }
+
+      .el-dialog__footer {
+        padding: 0 $dialogPadding;
+        height: $reportDialogFooterHeight;
+        line-height: $reportDialogFooterHeight;
+      }
+    }
+  }
+
+}
+
+.empty-box {
+  font-size: 30px;
+  text-align: center;
+}
+
+.message-container {
+  display: flex;
+  margin-bottom: 10px;
+  // 显示隐藏评论列表按钮
+  .vertical-line {
+    border-left: 1px solid $textColor7;
+    margin-top: 36px;
+    margin-right: 20px;
+    position: relative;
+
+    .minus-box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -100%);
+      font-size: 16px;
+      color: $textColor8;
+
+      &:hover {
+        color: $textHoverColor;
+      }
+    }
+  }
+
+  // 显示隐藏提示文字
+  .text-tips {
+    font-size: 16px;
+    height: 25px;
+    line-height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: $textColor8;
+
+    &:hover {
+      color: $textHoverColor;
+    }
+  }
+
+  // 左侧头像
+  .left-profile {
+    width: 60px;
+
+    .el-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  // 右侧内容
+  .right-content {
+    width: 100%;
+
+    span {
+      display: inline-block;
+    }
+
+    .nick-name {
+      margin-bottom: 10px;
+
+      // 昵称
+      span:nth-child(1) {
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          color: $textHoverColor2;
+        }
+      }
+
+      // 角色标识
+      .label {
+        color: #21ba45;
+        border: 1px solid #9bd4a9;
+        padding: 2px;
+        font-size: 12px;
+        border-radius: 4px;
+        margin-left: 3px;
+        cursor: default;
+        position: relative;
+
+        &.xzz {
+          color: pink;
+          border-color: pink;
+        }
+
+        .tooltip {
+          text-align: center;
+          visibility: hidden;
+          @include tooltip(200px);
+        }
+
+        &:hover .tooltip {
+          visibility: visible;
+
+          &:hover {
+            visibility: hidden;
+          }
+        }
+
+      }
+
+      .tip-time {
+        font-size: 12px;
+        color: $textColor;
+      }
+    }
+
+    .message {
+      margin-bottom: 10px;
+
+      &.illegal {
+        margin-bottom: 20px;
+        color: $textColor;
+        font-style: oblique;
+      }
+    }
+
+    .btns {
+      margin-bottom: 20px;
+
+      span {
+        display: inline-block;
+        cursor: pointer;
+        color: $textColor3;
+        font-size: 14px;
+
+        &:hover {
+          color: $textHoverColor4;
+        }
+      }
+
+      // 点赞，对他人评论的观点态度
+      .standpoint {
+        position: relative;
+
+        .standpoint-box {
+          transform: translate(-50%, -107%) !important;
+          visibility: hidden;
+          @include tooltip(130px, -5px);
+
+          &.isShow {
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    .reaction-list {
+      display: flex;
+      margin-top: -14px;
+
+      li {
+        padding: 5px 10px;
+        background: #FFFFFF;
+        font-size: 12px;
+        border: 1px solid $textColor7;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background: $textHoverColor5;
+        }
+
+        &.bg-dark {
+          background: rgba(254, 115, 0, 0.1)
+        }
+      }
+    }
+
+    .replay-box {
+      //padding-bottom: 500px;
+    }
+  }
+}
+
+.load-more-container {
+  @include hasMoreTxt;
+}
+
+.no-more-container {
+  @include noMoreTxt;
+}

@@ -1,0 +1,104 @@
+@import "/src/styles/variables";
+
+.article-detail-container {
+  margin-top: $marginTopMain;
+  position: relative;
+
+  .motto {
+    @include motto;
+  }
+
+  ::v-deep #tab-home {
+    @include tabHome;
+  }
+
+  ::v-deep .el-tab-pane {
+    @include clearfix;
+
+    main {
+      float: left;
+      width: 78%;
+      padding: 30px 30px 300px;
+      box-sizing: border-box;
+      // background: #FFFFFF;
+      background-color: rgba(255,255,255,0.6);
+
+      @include boxShadow;
+
+      header {
+        h2 {
+          margin-bottom: 20px;
+          color: $textColor3;
+        }
+        .article-origin {
+          color: #888888;
+          border: 1px solid #F3F3F3;
+          padding: 10px;
+          margin: 20px 0 15px 0;
+          line-height: 23px;
+          background: #F6F6F6;
+        }
+
+        .tags-box {
+          margin: 20px 0;
+          .el-tag {
+            cursor: pointer;
+            margin-right: 5px;
+          }
+        }
+        ul {
+          display: flex;
+          padding-left: 20px;
+          li {
+            margin-right: 20px;
+            color: $textColor;
+            font-size: 14px;
+          }
+
+          .author span,
+          .type span {
+            cursor: pointer;
+
+            &:hover {
+              color: $textHoverColor3;
+            }
+          }
+        }
+      }
+
+      article {
+        text-align: justify;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      footer {
+        .extra-feature-btn-box {
+          margin: 20px 0;
+          text-align: center;
+
+          .el-button:first-child {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+
+    aside {
+      float: right;
+      width: 20%;
+
+      .stand-here2 {
+        position: fixed;
+        width: 240px!important;
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+        margin-left: 480px;
+        z-index: 10;
+      }
+    }
+  }
+
+
+}

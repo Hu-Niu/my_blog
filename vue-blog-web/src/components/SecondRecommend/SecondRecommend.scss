@@ -1,0 +1,42 @@
+@import "/src/styles/variables";
+
+.second-recommend-container {
+  height: $carouselHeight;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 29px;
+
+  li {
+    height: $carouselHeight / 2 - 10;
+    position: relative;
+    cursor: pointer;
+
+    h2 {
+      @include textOneLine;
+      @include h2InImg;
+    }
+
+    .label {
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #fff;
+      background: rgba(0, 0, 0, .7);
+      z-index: 3;
+    }
+
+    .mask {
+      @include mask;
+
+      &:hover {
+        opacity: 0;
+      }
+    }
+  }
+}

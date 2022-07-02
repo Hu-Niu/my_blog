@@ -1,0 +1,35 @@
+@import "/src/styles/variables";
+
+.standpoint-emoji-container {
+  width: 100%;
+
+  h3 {
+    font-size: 12px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    font-weight: 400;
+    border-bottom: 1px solid $textColor7;
+    cursor: text;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    li {
+      width: 24%;
+      margin-top: 5px;
+      font-size: 18px;
+      text-align: center;
+
+      &:hover {
+        background: rgba(0, 0, 0, .2);
+      }
+      &.bg-dark {
+        background: rgba(254, 115, 0, 0.2)
+      }
+    }
+  }
+}

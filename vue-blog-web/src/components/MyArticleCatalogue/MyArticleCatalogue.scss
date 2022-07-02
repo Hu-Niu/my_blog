@@ -1,0 +1,79 @@
+@import "src/styles/variables";
+
+$boxTriangleWidth: 30px;
+$triangleBg: #C7C9CA;
+
+@mixin triangle {
+  width: 0;
+  height: 0;
+
+  border-top: $boxTriangleWidth/2 solid rgba(0, 0, 0, 0);
+  border-right: $boxTriangleWidth/2 solid rgba(0, 0, 0, 0);
+  border-bottom: $boxTriangleWidth/2 solid $triangleBg;
+  border-left: $boxTriangleWidth/2 solid rgba(0, 0, 0, 0);
+}
+
+.my-article-catalogue-container {
+  height: 700px;
+  position: relative;
+
+  ul {
+    background-color: rgba(255,255,255,0.6);
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    @include boxShadow;
+
+    .item {
+      cursor: pointer;
+      //color: $textHoverColor2;
+      &:hover .title::before {
+        background-color: $textColor9;
+      }
+
+      &:hover .title.active {
+        color: $textHoverColor3;
+      }
+
+      &:hover .title.active::before {
+        background-color: $textHoverColor2;
+      }
+
+      .title {
+        position: relative;
+        padding-left: 15px;
+        color: $textColor9;
+        margin-bottom: 5px;
+        display: block;
+        @include textOneLine;
+
+        &.active {
+          color: $textHoverColor2;
+        }
+
+        &:hover {
+          color: $textHoverColor4;
+        }
+
+        &::before {
+          content: '';
+          font-size: 0;
+          display: block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: $textColor9;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &.active::before {
+          background-color: $textHoverColor2;
+        }
+      }
+    }
+  }
+}

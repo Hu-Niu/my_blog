@@ -1,0 +1,28 @@
+.svg-icon-selector-container {
+
+  ::v-deep .el-dialog__body {
+    max-height: 500px;
+    overflow-y: scroll;
+
+    .icon-box {
+      text-align: center;
+      font-size: 20px;
+      border-left: 1px solid #eee;
+      border-top: 1px solid #eee;
+
+      .el-col {
+        border-right: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        margin-right: -1px;
+        margin-bottom: -1px;
+        padding: 2px;
+        .item {
+          cursor: pointer;
+        }
+      }
+
+    }
+
+  }
+
+}

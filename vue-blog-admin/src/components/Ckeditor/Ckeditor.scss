@@ -1,0 +1,19 @@
+.my-ckeditor-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+
+  ::v-deep .ck-editor {
+    height: 100%;
+
+    .ck-editor__main {
+      width: 100%;
+      height: calc(100% - 40px);
+      overflow-y: auto;
+
+      .ck-content {
+        min-height: 100%;
+      }
+    }
+  }
+}

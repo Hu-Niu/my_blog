@@ -1,0 +1,180 @@
+$contentPaddingLeft: 50px; // 内容区的左边距
+
+$timeLineBorderColor: #E3E9ED; // 时间轴的背景色
+
+$commitIconColor: #f4516c; // 发布文章图标颜色
+$editIconColor: #34bfa3; // 修改文章图标颜色
+$removeIconColor: #000; // 删除文章图标颜色
+$loveIconColor: #EB738C; // 点赞文章图标颜色
+
+$titleColor: #005980; // 文章标题的颜色
+$titleColorHover: #1283ba; // 文章标题鼠标悬浮时的颜色
+
+$tagColor: #4D4D4D; // 文章类别的颜色
+.dynamic-list-container {
+  padding-bottom: 50px;
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  section {
+    padding: 20px 90px;
+    background-color: rgba(225,225,225,0.6);
+
+
+    // 没有动态时
+    .no-activity {
+      text-align: center;
+      font-size: 60px;
+    }
+
+    // 有动态时
+    .has-activity {
+      .time {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .content {
+        padding-left: $contentPaddingLeft;
+        position: relative;
+
+        &>li {
+          position: relative;
+          padding-left: 10px;
+
+          .dynamic-time {
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            // 时间轴上的小图标
+            .time-line-icon {
+              position: absolute;
+              left: -($contentPaddingLeft/2+10);
+              top: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 1;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              border: 2px solid #fe7708;
+              background: #fff;
+
+              &.commit {
+                color: $commitIconColor;
+              }
+
+              &.edit {
+                color: $editIconColor;
+              }
+
+              &.remove {
+                color: $removeIconColor;
+              }
+            }
+          }
+
+          .action-title-box {
+            display: flex;
+            font-size: 14px;
+            margin-bottom: 5px;
+            .action-icon {
+              margin-right: 5px;
+              &.commit {
+                color: $commitIconColor;
+              }
+
+              &.edit {
+                color: $editIconColor;
+              }
+
+              &.remove {
+                color: $removeIconColor;
+              }
+
+              &.love {
+                color: $loveIconColor;
+              }
+            }
+          }
+
+
+          .dynamic-detail {
+            margin-bottom: 15px;
+
+            .article-list {
+              margin-bottom: 5px;
+              margin-left: 20px;
+              font-size: 14px;
+              display: flex;
+              flex-wrap: wrap;
+              position: relative;
+              padding-right: 100px;
+              .title {
+                margin-right: 15px;
+                color: $titleColor;
+                cursor: pointer;
+                &:hover {
+                  color: $titleColorHover;
+                }
+              }
+              .tags {
+                display: flex;
+                color: $tagColor;
+
+                .tag {
+                  cursor: pointer;
+                  font-size: 14px;
+
+                  &:hover {
+                    color: $titleColorHover;
+                  }
+                }
+
+                .split-line {
+                  padding: 0 3px;
+                  cursor: default;
+                }
+              }
+              .about-time {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: $tagColor;
+              }
+
+            }
+            .comment-msg {
+              margin-left: 20px;
+              margin-bottom: 5px;
+              display: flex;
+              padding-right: 100px;
+              position: relative;
+              .about-time {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: $tagColor;
+                font-size: 14px;
+              }
+            }
+
+          }
+        }
+
+        // 时间线
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: $contentPaddingLeft / 2;
+          width: 1px;
+          height: 100%;
+          background: $timeLineBorderColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.back-top-container {
+  .back-top-box {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    font-size: 40px;
+    font-weight: 700;
+    z-index: 999;
+    cursor: pointer;
+    transform: translateX(-50%);
+    margin-left: $w/2 + 90;
+  }
+}

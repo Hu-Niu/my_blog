@@ -1,0 +1,51 @@
+@import "/src/styles/variables";
+
+.classify-container {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255,0.6);
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  aside {
+    width: 17%;
+    height: 100%;
+    overflow-y: auto;
+
+    span {
+      cursor: pointer;
+
+      &.active {
+        color: $textHoverColor2;
+      }
+
+      &:hover {
+        color: $textHoverColor2;
+      }
+    }
+  }
+
+  article {
+    width: 82%;
+    height: 100%;
+    overflow-y: auto;
+
+    h4 {
+      margin-bottom: 15px;
+
+      &:hover {
+        cursor: pointer;
+        color: $textHoverColor2;
+      }
+    }
+
+    ::v-deep .el-tag {
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .load-tip {
+      @include noMoreTxt;
+    }
+  }
+}
